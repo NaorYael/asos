@@ -1,0 +1,71 @@
+mat-toolbar-row {
+  background-color: #2D2D2D;
+  color: white;
+}
+
+.wrap-logo {
+  position: absolute;
+  top: 2vh;
+  left: 6vw;
+}
+
+.image-logo {
+  height: 4vh;
+  width: 8vw;
+}
+
+.buttons {
+  position: absolute;
+  left: 20vw;
+}
+
+.icons{
+  position: absolute;
+  right: 8vw;
+}
+
+.drop-down {
+  position: absolute;
+  right: 1vw;
+}
+
+/*---------------------Input-----------------------*/
+img.icon-search {
+  position: absolute;
+  z-index: 1;
+  width: 1vw;
+  top: calc(50% - 1vw / 2);
+  right: 1vw;
+  color: white;
+}
+.search-input {
+  position: absolute;
+  right: 18vw;
+  height: 8vw;
+  z-index: 7;
+}
+
+.search {
+  box-sizing: border-box;
+  padding: 1vw;
+  width: 40vw;
+  height: 1vh;
+  border-radius: 15vw;
+  outline: none;
+  font-size: 1vw;
+  line-height: 1vw;
+  align-items: center;
+  text-align: left;
+  background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .image-logo {
+    height: 4vh;
+    width: 15vw;
+  }
+  .icons{
+    right: 14vw;
+  }
+
+}

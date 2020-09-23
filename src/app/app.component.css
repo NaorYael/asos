@@ -1,0 +1,7 @@
+.up{
+  position: fixed;
+  top: 30vw;
+  right: 0;
+  z-index: 10;
+  color: #2D2D2D;
+}

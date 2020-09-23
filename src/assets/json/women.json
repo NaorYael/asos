@@ -1,0 +1,86 @@
+[
+    {
+      "id": "001",
+      "name": "Pink Dress",
+      "price": 299,
+      "image": "assets/images/products/dress.jpeg",
+      "description": "This is the best dress ever!."
+    },
+    {
+      "id": "002",
+      "name": "Gray T-Shirt",
+      "price": 199,
+      "image": "assets/images/products/1148e5aae927915c7aa40eb7caf99c23.jpg",
+      "description": "This is the best T-Shirt ever!."
+    },
+    {
+      "id": "003",
+      "name": "Green Sweater",
+      "price": 99,
+      "image": "assets/images/products/4213deddb77ed733db9e1ce558fd4f7d.jpg",
+      "description": "This is the best Sweater ever!."
+    },
+    {
+      "id": "004",
+      "name": "White T-Shirt",
+      "price": 139,
+      "image": "assets/images/products/03027890d2dcce9dbdcdd954e28ad08e.jpg",
+      "description": "This is the best T-Shirt ever!."
+    },
+  {
+      "id": "005",
+      "name": "XL T-Shirt",
+      "price": 179,
+      "image": "assets/images/products/images.jpeg",
+      "description": "This is the best T-Shirt ever!."
+    },
+  {
+      "id": "006",
+      "name": "ASOS Swimsuit",
+      "price": 159,
+      "image": "assets/images/products/ASOS_swimsuit.jpeg",
+      "description": "This is the best Swimsuit ever!."
+    },
+  {
+      "id": "007",
+      "name": "ASOS T-Shirt",
+      "price": 149,
+      "image": "assets/images/products/12526372-1-black.jpeg",
+      "description": "This is the best T-Shirt ever!."
+    },
+  {
+      "id": "008",
+      "name": "Black Bag",
+      "price": 149,
+      "image": "assets/images/products/12816292-1-black.jpeg",
+      "description": "This is the best Bag ever!."
+    },
+  {
+      "id": "009",
+      "name": "White Sweater",
+      "price": 249,
+      "image": "assets/images/products/images(2).jpeg",
+      "description": "This is the best Bag ever!."
+    },
+  {
+      "id": "010",
+      "name": "Black Dress",
+      "price": 349,
+      "image": "assets/images/products/13478061-1-black.jpeg",
+      "description": "This is the best Dress ever!."
+    },
+  {
+      "id": "011",
+      "name": "White Undershirt",
+      "price": 69,
+      "image": "assets/images/products/asos-design-ruffle-detail-cami-in-organza-asos-156156190186nyu04n2b.jpg",
+      "description": "This is the best Undershirt ever!."
+    },
+  {
+      "id": "012",
+      "name": "Cool Coat",
+      "price": 269,
+      "image": "assets/images/products/images(3).jpeg",
+      "description": "This is the best Coat ever!."
+    }
+  ]

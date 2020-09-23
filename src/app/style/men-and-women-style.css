@@ -1,0 +1,151 @@
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.intro {
+  text-align: center;
+  background-image: url('../../assets/images/mob_hero_live_banner_peak-4.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.item {
+  position: absolute;
+  right: 20vw;
+  left: 20vw;
+  top: calc(50% - 50% / 2);
+}
+
+.title {
+  color: #232323;
+  background-color: #ffffff;
+  box-shadow: 0.37em 0 0 #ffffff, -0.37em 0 0 #ffffff;
+}
+
+h2 {
+  margin: 1vw;
+}
+
+.text-bottom {
+  color: #ffffff;
+  position: absolute;
+  bottom: 2vw;
+  font-size: 2vw;
+  right: 17vw;
+}
+
+.video-header {
+  position: relative;
+  overflow: hidden;
+  width: 99.9%;
+  border-radius: 5vw;
+}
+
+.image-mobile {
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+.content-mob {
+  position: absolute;
+  top: 113px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+
+}
+
+.content {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+.content-mob {
+  position: absolute;
+  top: 113px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+
+}
+
+.example-card {
+  max-width: 350px;
+  margin: 5px 5px 5px 5px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+mat-drawer {
+  position: fixed;
+  background-color: rgb(236, 236, 236);
+}
+
+.example-sidenav-content:first-child {
+  margin: 10px 5px 5px 5px;
+}
+
+.list-width {
+  width: 200px;
+
+}
+
+.list-item:hover {
+  background-color: rgba(83, 83, 83, 0.178);
+  cursor: pointer;
+}
+.body {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+img.mat-card-image {
+  width: 335px;
+  height: 55vh;
+}
+
+@media only screen and (min-width: 600px) {
+  .item {
+    right: 40vw;
+    left: 40vw;
+    top: calc(50% - 80% / 2);
+  }
+
+  .text-bottom {
+    color: #ffffff;
+    position: absolute;
+    bottom: 2vw;
+    font-size: 1vw;
+    right: 32vw;
+  }
+
+}

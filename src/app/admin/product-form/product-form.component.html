@@ -1,0 +1,83 @@
+<form fxLayout="column" [formGroup]="productForm">
+
+  <mat-form-field fxFlex>
+    <input #name matInput id="name" type="text" placeholder="Name" formControlName="name">
+    <mat-error *ngIf="checkError('name', 'required')">Name is required</mat-error>
+    <mat-error *ngIf="checkError('name', 'minlength')">Name should be more than 2 characters</mat-error>
+    <mat-error *ngIf="checkError('name', 'maxlength')">Name should be less than 20 characters</mat-error>
+  </mat-form-field>
+
+  <mat-form-field fxFlex>
+    <input #price matInput id="price" type="number" placeholder="Price" formControlName="price">
+    <mat-icon matSuffix>attach_money</mat-icon>
+    <mat-error *ngIf="checkError('price', 'required')">Price is required</mat-error>
+    <mat-error *ngIf="checkError('price', 'pattern')">Price is only a number</mat-error>
+    <mat-error *ngIf="checkError('price', 'maxlength')">Price should be less than 30 characters</mat-error>
+  </mat-form-field>
+
+  <mat-form-field fxFlex>
+    <mat-select #category id="category" placeholder="Category" formControlName="category">
+      <mat-option value="Test"></mat-option>
+      <mat-option *ngFor="let c of categories$ | async" [value]="c.payload.key">
+        {{  c.payload.val().name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="checkError('category', 'required')">Category is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field fxFlex>
+    <input #imageUrl matInput type="text" placeholder="Image URL" formControlName="imageUrl">
+    <mat-error *ngIf="checkError('imageUrl', 'required')">ImageUrl is required</mat-error>
+    <mat-error *ngIf="checkError('imageUrl', 'pattern')">Invalid URL</mat-error>
+  </mat-form-field>
+
+  <br>
+  <div class="form-element">
+    <button
+      (click)="saveOrUpdate(productForm)"
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="button">
+      Save
+    </button>
+
+    <button
+      (click)="remove(id)"
+      mat-raised-button
+      color="warn"
+      type="button"
+      class="button">
+      Delete
+    </button>
+
+    <button
+      (click)="back()"
+      mat-raised-button
+      type="button"
+      class="button">
+      Back
+    </button>
+  </div>
+
+</form>
+
+
+<div class="example-sidenav-content" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly center">
+  <mat-card class="example-card">
+    <img mat-card-image [src]="imageUrl.value" *ngIf="imageUrl.value"
+         alt="Photo {{name.value}}">
+    <mat-card-content>
+      <mat-card-title>{{ name.value}}</mat-card-title>
+      <p>
+        {{category.value}}
+      </p>
+      <mat-card-subtitle>{{price.value | currency: 'USD':true}}</mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between and">
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+
+
