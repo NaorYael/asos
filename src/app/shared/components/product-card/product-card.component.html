@@ -1,0 +1,33 @@
+<mat-card class="card">
+  <img mat-card-image src="{{product.imageUrl}}">
+  <mat-card-content>
+    <mat-card-title class="card-title">{{ product.name | readMore:[30, '...']}}</mat-card-title>
+    <mat-card-subtitle class="bold">{{product.price | currency:'USD' }}</mat-card-subtitle>
+    <div class="favorite" *ngIf="showActions">
+      <button mat-button>
+        <mat-icon (click)="onToggle()">
+          {{product.isFavorite ? 'favorite' : 'favorite_border'}}
+        </mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions fxLayoutAlign="space-between and" *ngIf="showActions">
+    <button
+      mat-raised-button
+      *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity"
+      (click)="addToCart()"
+      class="btn btn-secondary btn-block">
+      Add to Cart
+    </button>
+    <ng-template #updateQuantity>
+      <app-product-quantity
+        [product]="product"
+        [shopping-cart]="shoppingCart"
+      ></app-product-quantity>
+    </ng-template>
+  </mat-card-actions>
+
+</mat-card>
+
+

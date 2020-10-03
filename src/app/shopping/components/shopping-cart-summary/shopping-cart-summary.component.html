@@ -1,0 +1,25 @@
+<div  fxLayout="column" fxLayoutAlign="center center" >
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Order Summary</mat-card-title>
+      <mat-card-subtitle>You have {{cart.totalItemsCount}} in your shopping cart.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <div *ngFor="let item of cart.items">
+          {{ item.quantity }} x {{ item.name }}
+          <div class="right">
+            {{ item.totalPrice | currency: "USD" }}
+          </div>
+        </div>
+        <div class="bold">
+          Total
+          <div class="right bold">
+            {{ cart.totalPrice | currency: "USD"}}
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>

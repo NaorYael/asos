@@ -1,0 +1,15 @@
+<div class="main-quantity" fxLayout="row">
+  <div class="minus-button">
+    <button (click)="removeFromCart()" mat-raised-button class="btn btn-secondary btn-block">
+      -
+    </button>
+  </div>
+  <div class="quantity">
+    {{ shoppingCart.getQuantity(product) }} in cart
+  </div>
+  <div class="plus-button">
+    <button (click)="addToCart()" mat-raised-button class="btn btn-secondary btn-block">
+      +
+    </button>
+  </div>
+</div>

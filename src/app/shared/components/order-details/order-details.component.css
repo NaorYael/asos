@@ -1,0 +1,9 @@
+@media(max-width: 500px) {
+  .table thead {
+    display: none !important;
+  }
+  img.thumbnail {
+    display: none !important;
+  }
+}
+

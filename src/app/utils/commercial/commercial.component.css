@@ -1,0 +1,59 @@
+
+/*------------commercial---------------*/
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.intro {
+  text-align: center;
+  background-image: url('../../../assets/images/mob_hero_live_banner_peak-4.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.item {
+  position: absolute;
+  right: 20vw;
+  left: 20vw;
+  top: calc(50% - 50% / 2);
+}
+
+.title {
+  color: #232323;
+  background-color: #ffffff;
+  box-shadow: 0.37em 0 0 #ffffff, -0.37em 0 0 #ffffff;
+}
+
+h2 {
+  margin: 1vw;
+}
+
+.text-bottom {
+  color: #ffffff;
+  position: absolute;
+  bottom: 2vw;
+  font-size: 2vw;
+  right: 17vw;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .item {
+    right: 40vw;
+    left: 40vw;
+    top: calc(50% - 80% / 2);
+  }
+
+  .text-bottom {
+    color: #ffffff;
+    position: absolute;
+    bottom: 2vw;
+    font-size: 1vw;
+    right: 32vw;
+  }
+
+}

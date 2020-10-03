@@ -1,0 +1,7 @@
+.mat-chip-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 45px;
+}

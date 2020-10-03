@@ -1,0 +1,11 @@
+.login-main {
+  padding-top: 80px;
+}
+
+.card {
+  background-color: #f9f9f9;
+}
+
+mat-card-content {
+  color: #6f6f6f;
+}

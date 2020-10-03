@@ -1,36 +1,47 @@
 <mat-toolbar>
   <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row">
+    <div fxLayout="row" routerLink="/">
       <div class="wrap-logo">
         <img class="image-logo" src="assets/images/logo.png" alt="">
       </div>
     </div>
 
-    <div class="buttons" *ngIf="!deviceXs" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1vw">
-      <button mat-raised-button routerLink="/men">MEN</button>
-      <button mat-raised-button routerLink="/women">WOMEN</button>
-    </div>
 
     <div *ngIf="!deviceXs" class="search-input" fxLayout="row" fxLayoutAlign="center center">
-<!--      <img-->
-<!--        src="{{searchMode? '/assets/icons/clear.svg':'/assets/icons/search.svg'}}"-->
-<!--        alt="icon search"-->
-<!--        class="icon-search">-->
 
       <input
+        [(ngModel)]="query"
+        matInput
         class="search"
-        type="text"
-        (keyup)="onKeyPress()"
-        [placeholder]="'Search for items, brands and inspiration'">
+        placeholder="Search for items, brands and inspiration"
+        maxlength="150"
+        (ngModelChange)="filter()"
+        (keydown.backspace)="filter()">
 
     </div>
 
     <div class="icons" fxLayoutAlign="space-between center" fxLayoutGap="2vw">
-      <mat-icon *ngIf="deviceXs">search</mat-icon>
-      <mat-icon>perm_identity</mat-icon>
-      <mat-icon>favorite_border</mat-icon>
-      <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+      <mat-icon *ngIf="deviceXs" (click)="fadeState = fadeState === 'in' ? 'out' : 'in'">
+        {{fadeState === 'out' ? 'search' : 'clear'}}
+      </mat-icon>
+
+      <mat-icon style="cursor: pointer" routerLink="/my-orders">perm_identity</mat-icon>
+      <mat-icon
+        routerLink="/favorites"
+        [matBadge]="favoriteProducts>0? favoriteProducts: null"
+        style="cursor: pointer"
+        matBadgeColor="accent">favorite_border
+      </mat-icon>
+      <mat-icon
+        *ngIf="cart$ | async as cart"
+        routerLink="/shopping-cart"
+        [matBadge]="cart.totalItemsCount>0? cart.totalItemsCount: null"
+        style="cursor: pointer"
+        matBadgeColor="warn">
+        shopping_cart
+      </mat-icon>
     </div>
+
 
     <div class="drop-down">
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -38,14 +49,14 @@
       </button>
       <mat-menu #menu="matMenu">
 
-        <div *ngIf="appUser">Hello {{appUser.name}}</div>
+        <div *ngIf="appUser" style="padding: 15px">Hello {{appUser.name}}</div>
 
-        <button routerLink="/my/orders" mat-menu-item>
+        <button routerLink="/my-orders" mat-menu-item>
           <span>My Orders</span>
         </button>
 
 
-        <ng-container >
+        <ng-container *ngIf="appUser && appUser.isAdmin">
           <button routerLink="/admin/orders" mat-menu-item>
             <span>Manage Orders</span>
           </button>
@@ -68,9 +79,24 @@
     </div>
   </mat-toolbar-row>
 
+  <div class="wrap-arrow" *ngIf="deviceXs">
+    <button (click)="back()" mat-icon-button class="arrow-back">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
   <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between and">
-    <button mat-button routerLink="/men">MEN</button>
-    <button mat-button routerLink="/women">WOMEN</button>
+    <div *ngIf="fadeState === 'in'" [@fadeIn]="fadeState" [@fadeOut]="fadeState">
+
+      <input
+        [(ngModel)]="query"
+        matInput
+        class="search"
+        placeholder="Search for items, brands and inspiration"
+        maxlength="150"
+        (ngModelChange)="filter()"
+        (keydown.backspace)="filter()">
+    </div>
+
   </mat-toolbar-row>
 </mat-toolbar>
 

@@ -1,0 +1,9 @@
+<div *ngIf="cart$ | async as cart">
+  <div fxLayout="column">
+    <app-shopping-cart-summary [cart]="cart"></app-shopping-cart-summary>
+  </div>
+  <h2 class="shipping-title">Shipping</h2>
+  <div class="form" fxLayout="column">
+    <app-shipping-form [cart]="cart"></app-shipping-form>
+  </div>
+</div>

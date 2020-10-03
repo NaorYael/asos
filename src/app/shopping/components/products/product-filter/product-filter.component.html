@@ -1,0 +1,13 @@
+<mat-chip-list
+  class="example-chip-list"
+  cdkDropList
+  cdkDropListOrientation="horizontal">
+  <mat-chip
+    class="example-box"
+    cdkDrag
+    routerLink="/"
+    [queryParams]="{ category: c.key}"
+    *ngFor="let c of categories$ | async">
+    {{ c.key }}
+  </mat-chip>
+</mat-chip-list>

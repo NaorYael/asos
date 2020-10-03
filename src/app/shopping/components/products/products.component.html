@@ -1,0 +1,24 @@
+<app-commercial></app-commercial>
+
+<app-product-filter [category]="category"></app-product-filter>
+
+<button class="up" mat-button (click)="scrollToId('elId')">
+  <mat-icon>keyboard_arrow_up</mat-icon>
+</button>
+
+<div
+  *ngIf="cart$ | async as cart"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="space-evenly center">
+
+    <ng-container *ngFor="let product of filteredProducts;">
+      <div class="col">
+        <app-product-card [product]="product" [shopping-cart]="cart" [show-actions]="true"></app-product-card>
+      </div>
+    </ng-container>
+  </div>
+
+<app-footer *ngIf="filteredProducts.length > 0"></app-footer>
+
+

@@ -1,0 +1,40 @@
+<h1 class="main-title">Favorites</h1>
+
+<div *ngIf="products">
+
+  <div class="sub-title">
+    You have {{ products.length }} products in your favorite page.
+  </div>
+
+
+  <div class="main">
+    <table class="table">
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          <img class="thumbnail" src="{{product.imageUrl}}">
+        </td>
+        <td style="text-align: left">
+          {{ product.name | readMore:[50, '...']}}
+        </td>
+        <td>
+          <div>
+            <mat-icon style="cursor: pointer" color="primary" (click)="onBuy(product)">shopping_cart</mat-icon>
+          </div>
+        </td>
+        <td>
+          <button
+            (click)="onDelete(product.key)"
+            mat-button
+            color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

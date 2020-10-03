@@ -1,3 +1,14 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
 mat-toolbar-row {
   background-color: #2D2D2D;
   color: white;
@@ -6,7 +17,8 @@ mat-toolbar-row {
 .wrap-logo {
   position: absolute;
   top: 2vh;
-  left: 6vw;
+  left: 4vw;
+  cursor: pointer;
 }
 
 .image-logo {
@@ -19,7 +31,7 @@ mat-toolbar-row {
   left: 20vw;
 }
 
-.icons{
+.icons {
   position: absolute;
   right: 8vw;
 }
@@ -27,6 +39,14 @@ mat-toolbar-row {
 .drop-down {
   position: absolute;
   right: 1vw;
+}
+
+.arrow-back {
+  position: absolute;
+  left: 1vw;
+  color: white;
+  cursor: pointer;
+  top: 1vh;
 }
 
 /*---------------------Input-----------------------*/
@@ -38,9 +58,10 @@ img.icon-search {
   right: 1vw;
   color: white;
 }
+
 .search-input {
   position: absolute;
-  right: 18vw;
+  right: 32vw;
   height: 8vw;
   z-index: 7;
 }
@@ -60,12 +81,25 @@ img.icon-search {
 }
 
 @media only screen and (max-width: 600px) {
+  .search {
+    padding: 2vw;
+    width: 90vw;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    height: 3vh;
+  }
+
   .image-logo {
     height: 4vh;
     width: 15vw;
   }
-  .icons{
+
+  .icons {
     right: 14vw;
+  }
+
+  .wrap-logo {
+    left: 10vw;
   }
 
 }

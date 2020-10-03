@@ -1,0 +1,73 @@
+<form #f="ngForm" (ngSubmit)="placeOrder(f.value)">
+  <div class="form-group">
+    <mat-form-field fxFlex>
+      <input
+        #name="ngModel"
+        [(ngModel)]="shipping.name"
+        matInput
+        placeholder="Name"
+        name="name"
+        id="name"
+        type="text"
+        required
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field fxFlex>
+      <input
+        #address1="ngModel"
+        [(ngModel)]="shipping.address1"
+        matInput
+        placeholder="Address Line 1"
+        name="address"
+        id="address"
+        type="text"
+        required
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field fxFlex>
+      <input
+        #address2="ngModel"
+        [(ngModel)]="shipping.address2"
+        matInput
+        placeholder="Address Line 2"
+        name="address2"
+        id="address2"
+        type="text"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field fxFlex>
+      <input
+        #city="ngModel"
+        [(ngModel)]="shipping.city"
+        matInput
+        placeholder="City"
+        name="city"
+        id="city"
+        type="text"
+        required
+      />
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!f.valid"
+      class="btn btn-primary"
+    >Place Order
+    </button>
+
+  </div>
+
+</form>
+

@@ -1,0 +1,74 @@
+<h1 style="padding: 5px">Shopping Cart</h1>
+
+<div *ngIf="cart$ | async as cart; else noCart;" style="padding: 15px">
+
+  <div>
+    You have {{ cart.totalItemsCount }} items in your shopping cart.
+  </div>
+  <br>
+
+  <div class="main">
+    <table class="table">
+      <thead>
+      <tr>
+        <th></th>
+        <th style="text-align: left">Product</th>
+        <th class="text-center" style="width: 230px">Quantity</th>
+        <th class="text-right" style="width: 200px">Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of cart.items">
+        <td>
+          <!--        <div [style.backgroundImage]="'url('+ item.imageUrl +')'" class="thumbnail"></div>-->
+          <img class="thumbnail" src="{{item.imageUrl}}" alt="">
+        </td>
+        <td style="text-align: left">
+          {{ item.name }}
+        </td>
+        <td>
+          <app-product-quantity
+            [product]="item"
+            [shopping-cart]="cart"
+          ></app-product-quantity>
+        </td>
+        <td>
+          {{ item.totalPrice | currency:'USD' }}
+        </td>
+      </tr>
+
+      </tbody>
+      <tfoot>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th class="text-right">{{ cart.totalPrice | currency:'USD' }}</th>
+      </tr>
+      </tfoot>
+    </table>
+
+    <div style="padding: 15px; position: absolute; right: 55px">
+      <button
+        routerLink="/check-out"
+        *ngIf="cart.items.length> 0"
+        mat-raised-button
+        color="primary"
+      >Check Out
+      </button>
+    </div>
+
+
+    <div style="padding: 15px">
+      <button
+        *ngIf="cart.items.length"
+        (click)="clearCart()"
+        mat-button color="warn">Clear Shopping Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noCart>
+  <p>Shopping cart is empty.</p>
+</ng-template>

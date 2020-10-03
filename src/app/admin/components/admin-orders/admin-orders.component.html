@@ -1,0 +1,32 @@
+<h1 class="main-title">Manage Orders</h1>
+<ng-container *ngIf="orders$ as orders; else orderInfo;">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders$ ">
+      <td>{{ order.shipping.name }}</td>
+      <td>{{ order.datePlaced | date }}</td>
+      <td>
+        <a [routerLink]="['/my-orders/', order.key]">View</a>
+      </td>
+      <td>
+        <button mat-button color="warn" (click)="deleteOrder(order.key)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+
+<ng-template #orderInfo>
+  <p>There are no orders currently</p>
+</ng-template>

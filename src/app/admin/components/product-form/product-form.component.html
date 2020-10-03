@@ -1,0 +1,95 @@
+<form #f="ngForm" (ngSubmit)="save(f.value)" fxLayout="column">
+
+  <div>
+    <mat-form-field fxFlex>
+      <input
+        matInput
+        placeholder="Name"
+        #name="ngModel"
+        [(ngModel)]="product.name"
+        name="name"
+        id="name"
+        type="text"
+        required
+      />
+      <mat-error *ngIf="checkError('name', 'required')">Name is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field fxFlex>
+      <mat-icon matSuffix>attach_money</mat-icon>
+      <input
+        matInput
+        placeholder="Price"
+        #price="ngModel"
+        [(ngModel)]="product.price"
+        name="price"
+        id="price"
+        type="number"
+        required
+        [min]="0"
+      />
+      <mat-error *ngIf="checkError('price', 'required')">Price is required</mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <div>
+    <mat-form-field fxFlex>
+      <mat-select
+        #category="ngModel"
+        placeholder="Category"
+        [(ngModel)]="product.category"
+        name="category"
+        id="category"
+        required
+      >
+        <mat-option value=""></mat-option>
+        <mat-option *ngFor="let c of categories$ | async" [value]="c.key">
+          {{  c.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="checkError('category', 'required')">Category is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field fxFlex>
+      <input
+        matInput
+        #imageUrl="ngModel"
+        placeholder="Image Url"
+        [(ngModel)]="product.imageUrl"
+        name="imageUrl"
+        id="imageUrl"
+        type="text"
+        required
+        url
+      />
+      <mat-error *ngIf="checkError('imageUrl', 'required')">ImageUrl is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!f.valid"
+    >Save
+    </button>
+
+    <button
+      mat-raised-button
+      [ngStyle]="{ marginLeft: '20px' }"
+      type="button"
+      (click)="remove(id)"
+      color="warn"
+    >
+      Delete
+    </button>
+
+  </div>
+
+</form>
+
+<div  fxLayout="column" fxLayoutAlign="center center" >
+  <app-product-card [product]="product" [show-actions]="false"></app-product-card>
+</div>

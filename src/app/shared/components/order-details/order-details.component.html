@@ -1,0 +1,50 @@
+<div *ngIf="order$ | async as order">
+  <h1 class="main-title">Shipping Detail</h1>
+
+  <div class="main">
+    <table class="table">
+      <tbody>
+      <tr>
+        <td>
+          Name: {{ order.shipping.name }}
+        </td>
+        <td>
+          Address: {{ order.shipping.address1 }} <span
+          *ngIf="order.shipping.address2">, {{ order.shipping.address2 }}</span>
+        </td>
+        <td>
+          <div>City: {{ order.shipping.city }}</div>
+        </td>
+        <td>
+
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+  <div class="main">
+    <table class="table">
+      <tbody>
+      <tr *ngFor="let item of order.items">
+        <td>
+          <div><img width="80" height="80" style="border-radius: 100%" src="{{item.product.imageUrl}}" alt=""></div>
+        </td>
+        <td style="text-align: left">
+          {{ item.quantity }} x {{ item.product.name }}
+        </td>
+        <td>
+          <div class="float-right">{{ (item.product.price * item.quantity)  | currency:'USD'}}</div>
+        </td>
+        <td>
+
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
