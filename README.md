@@ -1,27 +1,27 @@
-# Asos
+# Asos website
+responsive eCommerce website Includes  angular material cards, angular material tables, sorting tables, filtering items, adding items to shopping cart, real-time updates across pages, order management, product management, forms for adding new products, auth guards for admins and users, order summaries, shipping information collection, and more.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+# Deployment
+ This App is deployed with firebase: [Live Demo](https://asos-a313b.firebaseapp.com//)
+ 
+ # Features
+* Authentication using Google.
+* User/s role managment.
+* CRUD(Create, Read, Update, Delete) Products.
+* An option to sort products by name and price (only Admin can see it).
+* Admin orders mangment.
+* Nice looking and friendly UI.
 
-## Development server
+ # Screenshot
+<img src="https://user-images.githubusercontent.com/47955339/94996567-12099b80-05ae-11eb-9c09-7f217f7e4d53.png" width:40>
+<img src="https://user-images.githubusercontent.com/47955339/94996570-146bf580-05ae-11eb-85c4-728be4d7d67d.png" width:40>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Built With:
+* [Angular CLI](https://cli.angular.io/) - 10.1.1.
+* [Angular Material](https://material.angular.io/) - 10.2.0.
+* [Angular Felx Layout](https://github.com/angular/flex-layout) - 10.0.0-beta.32.
+* [Firebase](https://firebase.google.com/) - 7.20.0.
+* [RXJS](https://rxjs-dev.firebaseapp.com/) - 6.6.3.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Author
+Naor Yael
