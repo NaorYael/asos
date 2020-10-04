@@ -1,5 +1,5 @@
 # Asos website
-responsive eCommerce website Includes  angular material cards, angular material tables, sorting tables, filtering items, adding items to shopping cart, real-time updates across pages, order management, product management, forms for adding new products, auth guards for admins and users, order summaries, shipping information collection, and more.
+Responsive eCommerce website Includes  angular material cards, angular material tables, sorting tables, filtering items, adding items to shopping cart, real-time updates across pages, order management, product management, forms for adding new products, auth guards for admins and users, order summaries, shipping information collection, and more.
 
 # Deployment
  This App is deployed with firebase: [Live Demo](https://asos-a313b.firebaseapp.com//)
@@ -19,7 +19,7 @@ responsive eCommerce website Includes  angular material cards, angular material 
 ## Built With:
 * [Angular CLI](https://cli.angular.io/) - 10.1.1.
 * [Angular Material](https://material.angular.io/) - 10.2.0.
-* [Angular Felx Layout](https://github.com/angular/flex-layout) - 10.0.0-beta.32.
+* [Angular Flex Layout](https://github.com/angular/flex-layout) - 10.0.0-beta.32.
 * [Firebase](https://firebase.google.com/) - 7.20.0.
 * [RXJS](https://rxjs-dev.firebaseapp.com/) - 6.6.3.
 
