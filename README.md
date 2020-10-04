@@ -10,6 +10,7 @@ Responsive eCommerce website Includes  angular material cards, angular material 
 * CRUD(Create, Read, Update, Delete) Products.
 * An option to sort products by name and price (only Admin can see it).
 * Admin orders mangment.
+* Favorite section.
 * Nice looking and friendly UI.
 
  # Screenshot
@@ -25,3 +26,7 @@ Responsive eCommerce website Includes  angular material cards, angular material 
 
 ## Author
 Naor Yael
+
+## Important
+this app built for visualization only
+all right received to asos ©
