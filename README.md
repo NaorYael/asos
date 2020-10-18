@@ -14,8 +14,7 @@ Responsive eCommerce website Includes  angular material cards, angular material 
 * Nice looking and friendly UI.
 
  # Screenshot
-<img src="https://user-images.githubusercontent.com/47955339/94996567-12099b80-05ae-11eb-9c09-7f217f7e4d53.png" width:40>
-<img src="https://user-images.githubusercontent.com/47955339/94996570-146bf580-05ae-11eb-85c4-728be4d7d67d.png" width:40>
+<img src="https://user-images.githubusercontent.com/47955339/96377814-ca2f6a80-1190-11eb-8a0c-03f26f3fe5d5.png" width:40>
 
 ## Built With:
 * [Angular CLI](https://cli.angular.io/) - 10.1.1.
